@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useTabStore } from "../store/store";
 import ImagePost from "../components/ImagePost";
 import TextPost from "../components/TextPost";
+import { Textarea } from "../@/components/ui/textarea";
+import { Label } from "../@/components/ui/label";
+import { TextareaForm } from "../components/TextAreaForm";
 
 type Props = {
   activeTab: boolean;
@@ -12,7 +15,7 @@ const Post = (props: Props) => {
   const { activeTab, setactiveTab } = useTabStore();
   return (
     <>
-      <section className="flex flex-1 h-screen w-screen container pt-32 mx-auto lg:px-4 lg:py-4 bg-black ">
+      <section className="flex flex-1 h-screen w-screen pt-32 lg:py-4 bg-black ">
         <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
           <ul
             className="flex flex-wrap -mb-px text-sm font-medium text-center"
@@ -28,14 +31,7 @@ const Post = (props: Props) => {
         {activeTab == "text" ? (
           <>
             <div className="flex mb-6 border-b justify-center items-center border-gray-200 dark:border-gray-700">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Large input
-              </label>
-              <textarea
-                inputMode="text"
-                id="large-input"
-                className="block resize-none flex-grow p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              />
+              <TextareaForm/>
             </div>
           </>
         ) : (
