@@ -1,3 +1,4 @@
+'use client';
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
@@ -14,6 +15,9 @@ import {
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { env } from "process";
+import { ApolloProvider } from "@apollo/client";
+import lensClient from "../lib/client";
+import Header from "../components/Header";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -27,11 +31,11 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   ],
   [publicProvider()]
 );
-const projectId='b2e423a2f74fa24d40a4cb046252c21b';
+const projectId = "b2e423a2f74fa24d40a4cb046252c21b";
 
 const { connectors } = getDefaultWallets({
   appName: "spaceshift",
-  projectId: projectId ,
+  projectId: projectId,
   chains,
 });
 
@@ -46,7 +50,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
-        <Component {...pageProps} />
+        <ApolloProvider client={lensClient}>
+          <Header />
+          <Component {...pageProps} />
+        </ApolloProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   );

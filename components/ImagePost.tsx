@@ -1,9 +1,9 @@
 import React from "react";
-import {useTabStore} from '../store/store'
+import {useStore} from '../store/store'
 type Props = {};
 
 function ImagePost({}: Props) {
-    const {activeTab,setActiveTab}=useTabStore();
+    const {activeTab,setActiveTab}=useStore();
   return (
     <li className="text-white" role="presentation">
       <button

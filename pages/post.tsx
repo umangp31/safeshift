@@ -1,5 +1,6 @@
+'use client';
 import React, { useEffect, useState } from "react";
-import { useTabStore } from "../store/store";
+import {useStore } from "../store/store";
 import ImagePost from "../components/ImagePost";
 import TextPost from "../components/TextPost";
 import { Textarea } from "../@/components/ui/textarea";
@@ -16,7 +17,7 @@ type Props = {
 
 const Post = (props: Props) => {
   // const [activeTab, setactiveTab] = useState(1);
-  const { activeTab, setactiveTab } = useTabStore();
+  const { activeTab, setactiveTab } = useStore();
   const [profiles, setProfiles] = useState<any>([]);
   useEffect(() => {
     fetchProfiles();
