@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
@@ -18,6 +18,8 @@ import { env } from "process";
 import { ApolloProvider } from "@apollo/client";
 import lensClient from "../lib/client";
 import Header from "../components/Header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -51,6 +53,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
         <ApolloProvider client={lensClient}>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
           <Header />
           <Component {...pageProps} />
         </ApolloProvider>

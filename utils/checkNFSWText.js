@@ -7,12 +7,11 @@ import {
 } from "@phala/sdk";
 import abi from "../target/nsfw_detector.json";
 
-
-const RPC_MAINNET_URL = "wss://api.phala.network/ws"
+const RPC_MAINNET_URL = "wss://api.phala.network/ws";
 
 async function checkNFSWText(text) {
   try {
-    console.log('this is the rpc mainnet', RPC_MAINNET_URL);
+    console.log("this is the rpc mainnet", RPC_MAINNET_URL);
     const api = await ApiPromise.create(
       options({
         provider: new WsProvider(RPC_MAINNET_URL),
@@ -30,10 +29,9 @@ async function checkNFSWText(text) {
 
     const pair = keyring.addFromUri("//Sahil");
 
-    const contractId =
-      process.env.contractId;
+    const contractId = process.env.NEXT_PUBLIC_CONTRACTID;
 
-      console.log(process.env.contractId, 'blkffi');
+    console.log(contractId, "blkffi");
 
     const contractKey = await phatRegistry.getContractKeyOrFail(contractId);
 
@@ -47,10 +45,10 @@ async function checkNFSWText(text) {
 
     const cert = await signCertificate({ api, pair });
     const { gasRequired, storageDeposit, result, output } =
-      await contract.query.isExplicitText(pair.address, { cert }, text);
+      await contract.query.isExplicitContent(pair.address, { cert }, text);
 
+      console.log(output.value,'aaayaaa');
     return output.value;
-
   } catch (error) {
     console.log(error);
   }
