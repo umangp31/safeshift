@@ -147,7 +147,7 @@ const TextAreaForm = (props: Props) => {
                               const isNSFW = JSON.parse(data as any);
                               if (isNSFW) {
                                 toast.error(
-                                  "Your content is NOT SAFE FOR WORK!",
+                                  "Your post contains explicit elements",
                                   {
                                     position: "top-center",
                                     autoClose: 5000,
@@ -292,7 +292,7 @@ const TextAreaForm = (props: Props) => {
                             const isNSFW = await checkNFSWImage(ipfsLink);
                             if (isNSFW) {
                               toast.error(
-                                "Your content is NOT SAFE FOR WORK!",
+                                "Your post contains explicit elements",
                                 {
                                   position: "top-center",
                                   autoClose: 5000,
