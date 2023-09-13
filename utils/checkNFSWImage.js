@@ -9,7 +9,7 @@ import abi from "../target/nsfw_detector.json";
 
 const RPC_MAINNET_URL = "wss://api.phala.network/ws";
 
-async function checkNFSWText(text) {
+async function checkNFSWImage(imageAddress) {
   try {
     const api = await ApiPromise.create(
       options({
@@ -42,12 +42,22 @@ async function checkNFSWText(text) {
 
     const cert = await signCertificate({ api, pair });
     const { gasRequired, storageDeposit, result, output } =
-      await contract.query.isExplicitContent(pair.address, { cert }, text);
+      await contract.query.isExplicitImage(
+        pair.address,
+        { cert },
+        imageAddress
+      );
 
-    return output.value;
+    if (output.value.__internal__raw.__internal__isBasic) {
+      return true;
+    } else {
+      const check = JSON.parse(output.value);
+
+      return check.ok;
+    }
   } catch (error) {
     console.log(error);
   }
 }
 
-export default checkNFSWText;
+export default checkNFSWImage;

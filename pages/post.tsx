@@ -9,6 +9,8 @@ import { client, exploreProfiles } from "../api/api";
 import Link from "next/link";
 import Image from "next/image";
 import TextareaForm from "../components/TextareaForm";
+import { toast } from "react-toastify";
+import { useCreateDataAvailabilityPostViaDispatcherMutation } from "../lens";
 // import { TextareaForm } from "../components/TextAreaForm";
 
 type Props = {
@@ -19,6 +21,7 @@ const Post = (props: Props) => {
   // const [activeTab, setactiveTab] = useState(1);
   const { activeTab, setactiveTab } = useStore();
   const [profiles, setProfiles] = useState<any>([]);
+
   useEffect(() => {
     fetchProfiles();
   }, []);
