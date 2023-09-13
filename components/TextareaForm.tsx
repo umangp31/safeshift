@@ -29,17 +29,37 @@ const TextAreaForm = (props: Props) => {
   const [postContent, setpostContent] = useState("");
   const [postImage, setpostImage] = useState<File | null>(null);
   const [isloading, setisloading] = useState(false);
+  const [imageSelect, setImageSelect] = useState(false);
   const { currentProfile } = useProfile();
   const { accessToken } = useStore();
   const [createMomokaPost] = useCreateDataAvailabilityPostViaDispatcherMutation(
     {
       onCompleted: (data) => {
         console.log(data);
-        toast("Post created!");
+
+        toast.success("Posted Successfully!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       },
       onError: (err) => {
         console.log(err);
-        toast("Something went wrong");
+        toast.error("Something went wrong!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       },
     }
   );
@@ -77,13 +97,23 @@ const TextAreaForm = (props: Props) => {
                   <TabsList className="grid w-full grid-cols-2 bg-neutral-800 text-white p-2 rounded-lg">
                     <TabsTrigger
                       value="account"
-                      className="bg-black rounded-lg p-1"
+                      className={`${
+                        imageSelect ? "bg-neutral-800" : "bg-black"
+                      } rounded-lg p-1`}
+                      onClick={() => {
+                        setImageSelect(false);
+                      }}
                     >
                       Text
                     </TabsTrigger>
                     <TabsTrigger
                       value="password"
-                      className="rounded-md active:bg-black"
+                      className={`${
+                        !imageSelect ? "bg-neutral-800" : "bg-black"
+                      } rounded-lg p-1`}
+                      onClick={() => {
+                        setImageSelect(true);
+                      }}
                     >
                       Image
                     </TabsTrigger>
@@ -115,8 +145,6 @@ const TextAreaForm = (props: Props) => {
                             const data = await checkNFSWText(postContent);
                             console.log("hukum", JSON.parse(data as any));
                             if (data) {
-                              setisloading(false);
-                              setpostContent("");
                               const isNSFW = JSON.parse(data as any);
                               if (isNSFW) {
                                 toast.error(
@@ -133,6 +161,17 @@ const TextAreaForm = (props: Props) => {
                                   }
                                 );
                               } else {
+                                toast.success("Passed NFSW Check!", {
+                                  position: "top-center",
+                                  autoClose: 5000,
+                                  hideProgressBar: true,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  progress: undefined,
+                                  theme: "light",
+                                });
+
                                 const uri = await createTextPost(
                                   postContent,
                                   currentProfile
@@ -151,6 +190,8 @@ const TextAreaForm = (props: Props) => {
                                   },
                                 });
                               }
+                              setisloading(false);
+                              setpostContent("");
                             }
                           }}
                           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
@@ -277,7 +318,7 @@ const TextAreaForm = (props: Props) => {
                             setisloading(false);
                             setpostImage(null);
                           }}
-                          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+                          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-8 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
                         >
                           {isloading ? (
                             <>
