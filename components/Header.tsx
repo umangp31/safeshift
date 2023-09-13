@@ -87,7 +87,7 @@ export default function Header() {
     <header className="text-black body-font w-[100%]">
       <div className="container mx-auto flex flex-wrap p-5 md:flex-row">
         <Link
-          className="flex title-font font-medium text-black mb-4 md:mb-0 pr-4"
+          className="flex title-font text-black mb-4 md:mb-0 pr-4 font-display font-bold"
           href="/"
         >
           <span className="ml-3 text-3xl">SafeShare</span>
@@ -126,10 +126,7 @@ export default function Header() {
               Home
             </Link>
             <Link className="mr-6 hover:text-white" href="/contact">
-              Contact
-            </Link>
-            <Link className="mr-6 hover:text-white" href="/404">
-              404
+              About
             </Link>
           </nav>
           {!isConnected ? (

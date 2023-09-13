@@ -1,8 +1,7 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import React, { useState } from "react";
-import { Label } from "../@/components/ui/label";
-import { Input } from "../@/components/ui/input";
+
 import {
   Card,
   CardContent,
@@ -306,6 +305,16 @@ const TextAreaForm = (props: Props) => {
                                 }
                               );
                             } else {
+                              toast.success("Passed NFSW Check!", {
+                                position: "top-center",
+                                autoClose: 5000,
+                                hideProgressBar: true,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                              });
                               const uri = await createImagePost(
                                 postImage,
                                 imageHash,

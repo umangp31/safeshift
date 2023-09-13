@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
@@ -45,7 +45,7 @@ const ConnectWalletButton = () => {
   ) : isLensAuthenticated ? (
     <button
       type="button"
-      className="bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-black/80"
+      className="bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 mb-16 hover:bg-black/80"
       onClick={() => {
         router.push("/post");
       }}

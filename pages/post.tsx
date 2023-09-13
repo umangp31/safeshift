@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import React, { useEffect, useState } from "react";
-import {useStore } from "../store/store";
+import { useStore } from "../store/store";
 import ImagePost from "../components/ImagePost";
 import TextPost from "../components/TextPost";
 import { Textarea } from "../@/components/ui/textarea";
@@ -47,17 +47,6 @@ const Post = (props: Props) => {
   return (
     <>
       <section className="flex flex-1 h-screen w-screen lg:bg-black overflow-hidden">
-        {/* <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-          <ul
-            className="flex flex-wrap -mb-px text-sm font-medium text-center"
-            id="myTab"
-            data-tabs-toggle="#myTabContent"
-            role="tablist"
-          >
-            <TextPost />
-            <ImagePost />
-          </ul>
-        </div> */}
         <TextareaForm />
       </section>
     </>
