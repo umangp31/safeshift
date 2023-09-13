@@ -13,6 +13,7 @@ SafeShift is a content sharing platform built with Lens social graph that puts s
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Additional Links](#additional)
 
 ## Introduction
 
@@ -49,7 +50,7 @@ SafeShift is built with a powerful stack of technologies:
 
 ## Live Link
 
-You can access the live Safeshift platform [here](https://www.safeshift.vercel.app).
+You can access the live Safeshift platform [here](https://safeshift.vercel.app/).
 
 
 ## Usage
@@ -80,3 +81,8 @@ Stay tuned for these exciting developments as we work to make Safeshift an even 
 ## License
 
 SafeShift is licensed under the [MIT License](LICENSE).
+
+## Additional Links
+
+[Backend Repo](https://github.com/VIVEK-SUTHAR/phala_check_nsfw_backend)
+[Phat Contract](https://github.com/VIVEK-SUTHAR/lens-detect-nsfw)
