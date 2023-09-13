@@ -6,6 +6,7 @@ SafeShare is a content sharing platform built with Lens social graph that puts s
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Architechture](#architechture)
 - [Key Features](#key-features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
@@ -18,6 +19,9 @@ SafeShare is a content sharing platform built with Lens social graph that puts s
 SafeShare is a project developed for the PhalaXLensxD_D Hackathon. Our mission is to create a secure and welcoming space for content sharing, where users can confidently share text and images without the fear of encountering NSFW content.
 
 With SafeShare, we aim to address the growing concerns related to online safety and privacy by implementing advanced NSFW content detection powered by TensorFlow.js and the robustness of Rust-based Phat contracts. Whether you want to share a funny meme or a thoughtful message, SafeShare ensures a clean and respectful environment for all.
+
+## Architechture
+![Architechture](https://safeshift.vercel.app/archi.png "a title")
 
 ## Key Features
 

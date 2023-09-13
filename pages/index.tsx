@@ -11,7 +11,7 @@ import Image from "next/image";
 import SquigglyLines from "../components/SquigglyLines";
 import ConnectWalletButton from "../components/ConnectWallet";
 import Phala from "../assets/Phala";
-import Next from "../assets/Next"
+import Next from "../assets/Next";
 import Lens from "../assets/Lens";
 const Home: NextPage = () => {
   return (
@@ -50,6 +50,16 @@ const Home: NextPage = () => {
             <Next />
             <Lens />
           </div>
+        </div>
+        <div className="my-16">
+          <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900">
+            *How does these works?*
+          </h1>
+          <img
+            src="./archi.png"
+            alt="safe share architechture"
+            className="mt-12"
+          />
         </div>
       </main>
     </div>
