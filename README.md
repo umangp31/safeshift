@@ -1,29 +1,78 @@
-This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](https://github.com/rainbow-me/rainbowkit/tree/main/packages/create-rainbowkit).
+# SafeShare: Content Sharing Platform with NSFW Detection
 
-## Getting Started
 
-First, run the development server:
+SafeShare is a content sharing platform built with Lens social graph that puts safety and user experience first. Leveraging the power of the Phala network and Phat contracts, SafeShare ensures that all shared content is scanned for NSFW (Not Safe for Work) content before it's posted to the Lens Protocol. If any NSFW content is detected, the post is automatically reverted to maintain a safe and respectful online environment.
 
-```bash
-npm run dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Introduction
 
-## Learn More
+SafeShare is a project developed for the PhalaXLensxD_D Hackathon. Our mission is to create a secure and welcoming space for content sharing, where users can confidently share text and images without the fear of encountering NSFW content.
 
-To learn more about this stack, take a look at the following resources:
+With SafeShare, we aim to address the growing concerns related to online safety and privacy by implementing advanced NSFW content detection powered by TensorFlow.js and the robustness of Rust-based Phat contracts. Whether you want to share a funny meme or a thoughtful message, SafeShare ensures a clean and respectful environment for all.
 
-- [RainbowKit Documentation](https://rainbowkit.com) - Learn how to customize your wallet connection flow.
-- [wagmi Documentation](https://wagmi.sh) - Learn how to interact with Ethereum.
-- [Next.js Documentation](https://nextjs.org/docs) - Learn how to build a Next.js application.
+## Key Features
 
-You can check out [the RainbowKit GitHub repository](https://github.com/rainbow-me/rainbowkit) - your feedback and contributions are welcome!
+- **NSFW Content Detection**: Utilizing TensorFlow.js, SafeShare scans text and images to detect NSFW content and automatically prevents its posting.
 
-## Deploy on Vercel
+- **Phala Network Integration**: SafeShare leverages the Phala network for secure and efficient content processing leveraging the decentralize compute ensuring it's always up.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **User-Friendly Interface**: Frontend built with Next.js ensures an intuitive and visually pleasing user experience, with Shadcn for consistent styling.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies Used
+
+SafeShare is built with a powerful stack of technologies:
+
+- **Next.js**: A React framework for building user interfaces.
+
+- **ShadCN**: A CSS framework for styling the application.
+
+- **Rust**: Used for developing Phat contracts, ensuring secure content handling.
+
+- **TensorFlow.js**: Employed for NSFW content detection and filtering.
+
+- **Lens Protocol**: The Social Graph of Web3
+
+- **IPFS**: The Decentralized storage layer,where all the content is being stored.
+
+## Live Link
+
+You can access the live Safeshift platform [here](https://www.safeshift.vercel.app).
+
+
+## Usage
+
+1. Login to SafeShare  via your Lens Profile.
+
+2. Create a new post by uploading an image or entering text.
+
+3. SafeShare will automatically scan the content for NSFW elements.
+
+4. If NSFW content is detected, the post will be reverted. Otherwise, it will be published to Lens for others to see.
+
+5. Enjoy a safe and respectful content sharing experience!
+
+## Future Plans
+
+We have exciting plans for the future of Safeshift, including:
+
+- **Enhanced NSFW Detection**: Continuously improving our NSFW content detection algorithms to ensure even better accuracy and safety.
+
+- **Support Video Content**: We will be supporting the video upload with nsfw scanning for better content sharing.
+
+- **Feedback and Suggestions**: We value your feedback and are open to suggestions from the Safeshift community. Let us know what features you'd like to see!
+
+Stay tuned for these exciting developments as we work to make Safeshift an even better platform for secure and respectful content sharing.
+
+
+## License
+
+SafeShare is licensed under the [MIT License](LICENSE).
