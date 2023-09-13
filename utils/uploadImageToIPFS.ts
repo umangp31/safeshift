@@ -14,7 +14,6 @@ const uploadImageToIPFS = async (
   imageBlob: Blob | undefined
 ): Promise<string> => {
   try {
-    console.log(API_TOKEN);
     const headersList = {
       Authorization: `Bearer ${API_TOKEN}`,
     };
