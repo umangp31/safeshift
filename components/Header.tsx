@@ -90,7 +90,7 @@ export default function Header() {
           className="flex title-font text-black mb-4 md:mb-0 pr-4 font-display font-bold"
           href="/"
         >
-          <span className="ml-3 text-3xl">SafeShare</span>
+          <span className="ml-3 text-3xl">SafeShift</span>
         </Link>
         <button
           className="text-black cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none ml-auto pb-3"
@@ -122,10 +122,10 @@ export default function Header() {
           id="example-navbar-danger"
         >
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center font-semibold pl-7">
-            <Link className="mr-6 hover:text-white" href="/">
+            <Link className="mr-6 hover:text-gray-600 delay-500" href="/">
               Home
             </Link>
-            <Link className="mr-6 hover:text-white" href="/contact">
+            <Link className="mr-6 hover:text-gray-600 delay-500" href="/about">
               About
             </Link>
           </nav>

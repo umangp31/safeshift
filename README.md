@@ -1,7 +1,7 @@
-# SafeShare: Content Sharing Platform with NSFW Detection
+# SafeShift: Content Sharing Platform with NSFW Detection
 
 
-SafeShare is a content sharing platform built with Lens social graph that puts safety and user experience first. Leveraging the power of the Phala network and Phat contracts, SafeShare ensures that all shared content is scanned for NSFW (Not Safe for Work) content before it's posted to the Lens Protocol. If any NSFW content is detected, the post is automatically reverted to maintain a safe and respectful online environment.
+SafeShift is a content sharing platform built with Lens social graph that puts safety and user experience first. Leveraging the power of the Phala network and Phat contracts, SafeShift ensures that all shared content is scanned for NSFW (Not Safe for Work) content before it's posted to the Lens Protocol. If any NSFW content is detected, the post is automatically reverted to maintain a safe and respectful online environment.
 
 ## Table of Contents
 
@@ -16,24 +16,24 @@ SafeShare is a content sharing platform built with Lens social graph that puts s
 
 ## Introduction
 
-SafeShare is a project developed for the PhalaXLensxD_D Hackathon. Our mission is to create a secure and welcoming space for content sharing, where users can confidently share text and images without the fear of encountering NSFW content.
+SafeShift is a project developed for the PhalaXLensxD_D Hackathon. Our mission is to create a secure and welcoming space for content sharing, where users can confidently share text and images without the fear of encountering NSFW content.
 
-With SafeShare, we aim to address the growing concerns related to online safety and privacy by implementing advanced NSFW content detection powered by TensorFlow.js and the robustness of Rust-based Phat contracts. Whether you want to share a funny meme or a thoughtful message, SafeShare ensures a clean and respectful environment for all.
+With SafeShift, we aim to address the growing concerns related to online safety and privacy by implementing advanced NSFW content detection powered by TensorFlow.js and the robustness of Rust-based Phat contracts. Whether you want to share a funny meme or a thoughtful message, SafeShift ensures a clean and respectful environment for all.
 
 ## Architechture
 ![Architechture](https://safeshift.vercel.app/archi.png "a title")
 
 ## Key Features
 
-- **NSFW Content Detection**: Utilizing TensorFlow.js, SafeShare scans text and images to detect NSFW content and automatically prevents its posting.
+- **NSFW Content Detection**: Utilizing TensorFlow.js, SafeShift scans text and images to detect NSFW content and automatically prevents its posting.
 
-- **Phala Network Integration**: SafeShare leverages the Phala network for secure and efficient content processing leveraging the decentralize compute ensuring it's always up.
+- **Phala Network Integration**: SafeShift leverages the Phala network for secure and efficient content processing leveraging the decentralize compute ensuring it's always up.
 
 - **User-Friendly Interface**: Frontend built with Next.js ensures an intuitive and visually pleasing user experience, with Shadcn for consistent styling.
 
 ## Technologies Used
 
-SafeShare is built with a powerful stack of technologies:
+SafeShift is built with a powerful stack of technologies:
 
 - **Next.js**: A React framework for building user interfaces.
 
@@ -54,11 +54,11 @@ You can access the live Safeshift platform [here](https://www.safeshift.vercel.a
 
 ## Usage
 
-1. Login to SafeShare  via your Lens Profile.
+1. Login to SafeShift  via your Lens Profile.
 
 2. Create a new post by uploading an image or entering text.
 
-3. SafeShare will automatically scan the content for NSFW elements.
+3. SafeShift will automatically scan the content for NSFW elements.
 
 4. If NSFW content is detected, the post will be reverted. Otherwise, it will be published to Lens for others to see.
 
@@ -79,4 +79,4 @@ Stay tuned for these exciting developments as we work to make Safeshift an even 
 
 ## License
 
-SafeShare is licensed under the [MIT License](LICENSE).
+SafeShift is licensed under the [MIT License](LICENSE).

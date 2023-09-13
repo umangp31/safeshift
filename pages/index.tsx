@@ -50,16 +50,6 @@ const Home: NextPage = () => {
             <Lens />
           </div>
         </div>
-        <div className="my-16">
-          <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900">
-            How does these works?
-          </h1>
-          <img
-            src="./archi.png"
-            alt="safe share architechture"
-            className="mt-12"
-          />
-        </div>
       </main>
     </div>
   );

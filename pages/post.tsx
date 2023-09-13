@@ -11,6 +11,7 @@ import Image from "next/image";
 import TextareaForm from "../components/TextareaForm";
 import { toast } from "react-toastify";
 import { useCreateDataAvailabilityPostViaDispatcherMutation } from "../lens";
+import { Router, useRouter } from "next/router";
 // import { TextareaForm } from "../components/TextAreaForm";
 
 type Props = {
@@ -21,9 +22,13 @@ const Post = (props: Props) => {
   // const [activeTab, setactiveTab] = useState(1);
   const { activeTab, setactiveTab } = useStore();
   const [profiles, setProfiles] = useState<any>([]);
-
+  const {isLensAuthenticated}= useStore();
+  const router=useRouter();
   useEffect(() => {
     fetchProfiles();
+    if(!isLensAuthenticated){
+      router.push('/');
+    }
   }, []);
 
   async function fetchProfiles() {
@@ -46,7 +51,7 @@ const Post = (props: Props) => {
 
   return (
     <>
-      <section className="flex flex-1 h-screen w-screen lg:bg-black overflow-hidden">
+      <section className="flex flex-1 min-h-screen lg:bg-black overflow-hidden">
         <TextareaForm />
       </section>
     </>
